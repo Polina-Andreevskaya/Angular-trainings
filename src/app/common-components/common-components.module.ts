@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './logo/logo.component';
 import { FooterComponent } from './footer/footer.component';
+import { FinderComponent } from './finder/finder.component';
 
 @NgModule({
   imports: [
@@ -10,9 +11,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   exports: [
   	HeaderComponent,
-  	LogoComponent,
   	FooterComponent
   ],
-  declarations: [HeaderComponent, LogoComponent, FooterComponent]
+  declarations: [HeaderComponent, LogoComponent, FooterComponent, FinderComponent]
 })
 export class CommonComponentsModule { }
