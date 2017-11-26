@@ -3,12 +3,16 @@
     "node_modules/codelyzer"
   ],
   "rules": {
-    "arrow-return-shorthand": true,
+    "arrow-return-shorthand": [
+      true,
+      "multiline"
+    ],
     "callable-types": true,
     "class-name": true,
     "comment-format": [
       true,
-      "check-space"
+      "check-space",
+      "check-lowercase"
     ],
     "curly": true,
     "eofline": true,
@@ -21,7 +25,8 @@
     "import-spacing": true,
     "indent": [
       true,
-      "spaces"
+      "tabs",
+      2
     ],
     "interface-over-type-literal": true,
     "label-position": true,
