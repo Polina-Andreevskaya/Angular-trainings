@@ -1,7 +1,7 @@
 export interface Icourse {
 	id: number;
-	name: string;
+	title: string;
 	duration: number;
 	description: string;
-	date: string;	
+	date: typeof Date;
 }
