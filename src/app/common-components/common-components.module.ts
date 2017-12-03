@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './logo/logo.component';
 import { FooterComponent } from './footer/footer.component';
 import { FinderComponent } from './finder/finder.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
   	HeaderComponent,
   	FooterComponent
   ],
-  declarations: [HeaderComponent, LogoComponent, FooterComponent, FinderComponent]
+  declarations: [HeaderComponent, LogoComponent, FooterComponent, FinderComponent, LoginComponent]
 })
 export class CommonComponentsModule { }
