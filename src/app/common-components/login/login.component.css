@@ -1,0 +1,9 @@
+.login_container {
+  float: right;
+  padding-right: 200px;
+}
+
+.login_container:after {
+  clear: both;
+}
+
