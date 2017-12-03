@@ -1,3 +1,12 @@
-<p>
-  finder works! It's part of the header
-</p>
+<div class="finder_container">
+    <input type="text"
+           placeholder="Type a name of the course"
+           [(ngModel)]="courseToSearch"/>
+    <button type="button"
+            (click)="search(courseToSearch)">
+      Find
+    </button>
+  <button>
+    Add course
+  </button>
+</div>
