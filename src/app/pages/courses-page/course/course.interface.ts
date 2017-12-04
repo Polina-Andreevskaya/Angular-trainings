@@ -1,7 +1,7 @@
-export interface Icourse {
+export interface CourseInterface {
 	id: number;
 	title: string;
 	duration: number;
 	description: string;
-	date: typeof Date;
+	date: Date;
 }
