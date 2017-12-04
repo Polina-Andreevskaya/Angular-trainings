@@ -1,3 +1,9 @@
-<p>
-  course works!
-</p>
+<li class="course_item">
+    <h3>{{course.title}}</h3>
+    <span>{{course.duration | toHours}}</span>
+    <span>{{course.date | date}}</span>
+    <p>{{course.description}}</p>
+
+  <button>Edit</button>
+  <button (click)="deleteItem(course)">Delete course</button>
+</li>
