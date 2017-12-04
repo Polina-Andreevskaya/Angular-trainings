@@ -1,11 +1,13 @@
-<app-header></app-header>
-<main>
-  <ul class="courses_list">
-    <app-course *ngFor="let course of courses"
-                [course]="course"
-                (elementDeleted)="onElementDeleted($event)">
-    </app-course>
-  </ul>
-</main>
+<div class="inner-container">
+  <app-header></app-header>
+  <main>
+    <ul class="m-0 list-unstyled">
+      <app-course *ngFor="let course of courses"
+                  [course]="course"
+                  (elementDeleted)="onElementDeleted($event)">
+      </app-course>
+    </ul>
+  </main>
+</div>
 <app-footer></app-footer>
 

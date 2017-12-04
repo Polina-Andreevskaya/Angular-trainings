@@ -1,3 +1,5 @@
-.page_footer {
-  background-color: darkslategray;
+footer {
+  background-color: #6c757d;
+  height: 50px;
+  line-height: 50px;
 }
