@@ -1,3 +1,17 @@
-<p>
-  finder works! It's part of the header
-</p>
+<form class="form-inline m-0 p-3">
+  <input type="text"
+         placeholder="Type a name of the course"
+         [(ngModel)]="courseToSearch"
+         [ngModelOptions]="{standalone: true}"
+         class="form-control col-9 mr-2"/>
+  <button type="button"
+          (click)="search(courseToSearch)"
+          class="btn mr-2">
+    Find
+  </button>
+  <button class="btn">
+    &#9993; Add course
+  </button>
+</form>
+
+
