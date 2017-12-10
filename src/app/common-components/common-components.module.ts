@@ -7,7 +7,7 @@ import { LogoComponent } from './logo/logo.component';
 import { FooterComponent } from './footer/footer.component';
 import { FinderComponent } from './finder/finder.component';
 import { LoginComponent } from './login/login.component';
-import { formatMinutesFilter } from "./formatMinutes.pipe";
+import {formatMinutes} from './formatMinutes.pipe';
 
 @NgModule({
   imports: [
