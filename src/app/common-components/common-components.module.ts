@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FinderComponent } from './finder/finder.component';
 import { LoginComponent } from './login/login.component';
 import {formatMinutes} from './formatMinutes.pipe';
+import {ModalComponent} from './modal/modal.component';
 
 @NgModule({
   imports: [
@@ -17,8 +18,9 @@ import {formatMinutes} from './formatMinutes.pipe';
   exports: [
     HeaderComponent,
     FooterComponent,
-    formatMinutesFilter
+    formatMinutes,
+    ModalComponent
   ],
-  declarations: [HeaderComponent, LogoComponent, FooterComponent, FinderComponent, LoginComponent, formatMinutesFilter]
+  declarations: [HeaderComponent, LogoComponent, FooterComponent, FinderComponent, LoginComponent, formatMinutes, ModalComponent]
 })
 export class CommonComponentsModule { }

@@ -9,6 +9,7 @@ import { CourseComponent } from './Pages/courses-page/course/course.component';
 import { CommonComponentsModule } from './Common-components/common-components.module';
 import { CourseDetailsPageComponent } from './Pages/course-details-page/course-details-page.component';
 
+import {CourseService} from './Pages/courses-page/course.service';
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import { CourseDetailsPageComponent } from './Pages/course-details-page/course-d
     BrowserModule,
     CommonComponentsModule
   ],
-  providers: [],
+  providers: [
+    CourseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

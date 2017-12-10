@@ -7,6 +7,8 @@
                   (elementDeleted)="onElementDeleted($event)">
       </app-course>
     </ul>
+    <app-modal *ngIf="isModalDialogVisible" [header]="header.value" [description]="description.value"
+                  (isConfirmed)="closeModal($event)"></app-modal>
   </main>
 </div>
 <app-footer></app-footer>
