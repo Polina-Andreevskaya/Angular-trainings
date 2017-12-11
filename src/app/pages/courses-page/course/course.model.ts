@@ -1,4 +1,4 @@
-import {CourseInterface} from "./course.interface";
+import {CourseInterface} from './course.interface';
 
 export class CourseModel implements CourseInterface {
   id: number;

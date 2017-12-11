@@ -1,16 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 
-import { AppComponent } from './app.component';
-import { LoginPageComponent } from './Pages/login-page/login-page.component';
-import { CoursesPageComponent } from './Pages/courses-page/courses-page.component';
-import { CourseComponent } from './Pages/courses-page/course/course.component';
-import { CommonComponentsModule } from './Common-components/common-components.module';
-import { CourseDetailsPageComponent } from './Pages/course-details-page/course-details-page.component';
+import {AppComponent} from './app.component';
+import {LoginPageComponent} from './Pages/login-page/login-page.component';
+import {CoursesPageComponent} from './Pages/courses-page/courses-page.component';
+import {CourseComponent} from './Pages/courses-page/course/course.component';
+import {CommonComponentsModule} from './Common-components/common-components.module';
+import {CourseDetailsPageComponent} from './Pages/course-details-page/course-details-page.component';
 
 import {CourseService} from './Pages/courses-page/course.service';
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import {LoginService} from './login.service';
 
 @NgModule({
@@ -32,4 +32,5 @@ import {LoginService} from './login.service';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

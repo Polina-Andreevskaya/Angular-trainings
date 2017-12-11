@@ -16,7 +16,7 @@ export class CoursesPageComponent implements OnInit {
   protected modal = {
     header: 'Delete course',
     description: 'Do you really want to delete this course?'
-  }
+  };
 
   constructor(private courseService: CourseService) {
   }

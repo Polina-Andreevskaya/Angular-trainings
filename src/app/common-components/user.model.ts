@@ -1,4 +1,5 @@
 import {UserInterface} from './user.interface';
+
 export class UserModel implements UserInterface {
   id: number;
   login: string;

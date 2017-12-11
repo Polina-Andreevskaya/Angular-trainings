@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { CourseModel } from './course/course.model';
+import {Injectable} from '@angular/core';
+import {CourseModel} from './course/course.model';
 
 import * as _ from 'lodash';
 
@@ -44,7 +44,7 @@ export class CourseService {
   }
 
 
-  getCourseById(elementId: number): CourseModel|null {
+  getCourseById(elementId: number): CourseModel | null {
     return _.find(this.courses, (x) => x.id === elementId);
   }
 

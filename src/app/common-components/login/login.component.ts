@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../../login.service';
 
 @Component({
@@ -9,7 +9,8 @@ import {LoginService} from '../../login.service';
 export class LoginComponent implements OnInit {
   name: string;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService) {
+  }
 
   ngOnInit() {
     this.name = this.loginService.getUserInfo();
