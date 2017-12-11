@@ -1,6 +1,33 @@
-<h1>
-  login-page works!
-</h1>
-<app-header></app-header>
-<p>Login page content</p>
+<div class="inner-container">
+  <app-header></app-header>
+  <main class="container p-5">
+    <form (submit)="onSubmit()"
+          *ngIf="!loginService.isAuthenticated()">
+      <label for="login">
+        Login
+      </label>
+      <input type="text"
+             id="login"
+             class="form-control mb-3"
+             [(ngModel)]="login"
+             [ngModelOptions]="{standalone: true}"
+             placeholder="Login">
+      <label for="password">
+        Password
+      </label>
+      <input type="password"
+             id="password"
+             class="form-control"
+             [(ngModel)]="password"
+             [ngModelOptions]="{standalone: true}"
+             placeholder="Password">
+      <button type="submit" class="btn mt-3">
+        Enter
+      </button>
+    </form>
+    <h3 *ngIf="loginService.isAuthenticated()">
+      You are already logged in
+    </h3>
+  </main>
+</div>
 <app-footer></app-footer>

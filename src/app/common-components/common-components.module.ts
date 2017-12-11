@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import {formatMinutes} from './formatMinutes.pipe';
 import {ModalComponent} from './modal/modal.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -21,6 +22,8 @@ import {ModalComponent} from './modal/modal.component';
     formatMinutes,
     ModalComponent
   ],
+
   declarations: [HeaderComponent, LogoComponent, FooterComponent, FinderComponent, LoginComponent, formatMinutes, ModalComponent]
 })
-export class CommonComponentsModule { }
+export class CommonComponentsModule {
+}

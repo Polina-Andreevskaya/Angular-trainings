@@ -10,7 +10,8 @@ import { CommonComponentsModule } from './Common-components/common-components.mo
 import { CourseDetailsPageComponent } from './Pages/course-details-page/course-details-page.component';
 
 import {CourseService} from './Pages/courses-page/course.service';
-
+import { FormsModule } from '@angular/forms';
+import {LoginService} from './login.service';
 
 @NgModule({
   declarations: [
@@ -22,10 +23,12 @@ import {CourseService} from './Pages/courses-page/course.service';
   ],
   imports: [
     BrowserModule,
-    CommonComponentsModule
+    CommonComponentsModule,
+    FormsModule
   ],
   providers: [
-    CourseService
+    CourseService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
