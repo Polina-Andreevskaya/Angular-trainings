@@ -6,4 +6,12 @@ export class CourseModel implements CourseInterface {
   duration: number;
   description: string;
   date: Date;
+
+  constructor(id: number, title: string, duration: number, description: string, date: Date) {
+    this.id = id;
+    this.title = title;
+    this.duration = duration;
+    this.description = description;
+    this.date = date;
+  }
 }

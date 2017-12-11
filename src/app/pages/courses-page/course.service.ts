@@ -38,15 +38,11 @@ export class CourseService {
     return this.courses;
   }
 
-  // addCourse(id: number, title: string, duration: number, description: string, date: Date): boolean {
-  //   this.courses.push(
-  //     new CourseModel(
-  //       id, title, description, date, duration
-  //     )
-  //   );
-  //
-  //   return true;
-  // }
+  createCourse(id: number, title: string, duration: number, description: string, date: Date): boolean {
+    this.courses.push(new CourseModel(id, title, duration, description, date));
+    return true;
+  }
+
 
   getCourseById(elementId: number): CourseModel|null {
     return _.find(this.courses, (x) => x.id === elementId);

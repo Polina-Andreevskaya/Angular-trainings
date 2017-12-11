@@ -13,6 +13,10 @@ export class CoursesPageComponent implements OnInit {
   protected courses: Array<CourseModel>;
   protected isModalDialogVisible = false;
   private elementToDelete: number;
+  protected modal = {
+    header: 'Delete course',
+    description: 'Do you really want to delete this course?'
+  }
 
   constructor(private courseService: CourseService) {
   }
