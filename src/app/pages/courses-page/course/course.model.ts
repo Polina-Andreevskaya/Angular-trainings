@@ -1,9 +1,10 @@
-import {CourseInterface} from "./course.interface";
+import {CourseInterface} from './course.interface';
 
 export class CourseModel implements CourseInterface {
-  id: number;
-  title: string;
-  duration: number;
-  description: string;
-  date: Date;
+  constructor(public id: number,
+              public title: string,
+              public duration: number,
+              public description: string,
+              public date: Date
+  ) {}
 }

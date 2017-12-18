@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {CourseModel} from "./course/course.model";
+import {CourseModel} from './course/course.model';
+import {CourseService} from './course.service';
+
 
 @Component({
   selector: 'app-courses-page',
@@ -9,39 +11,35 @@ import {CourseModel} from "./course/course.model";
 export class CoursesPageComponent implements OnInit {
 
   protected courses: Array<CourseModel>;
+  protected isModalDialogVisible = false;
+  private elementToDelete: number;
+  protected modal = {
+    header: 'Delete course',
+    description: 'Do you really want to delete this course?'
+  };
 
-  constructor() {
+  constructor(private courseService: CourseService) {
   }
 
   ngOnInit() {
-    this.courses = [
-      {
-        id: 1,
-        title: 'First course',
-        date: new Date(),
-        duration: 120,
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-      },
-      {
-        id: 2,
-        title: 'Second course',
-        date: new Date(),
-        duration: 95,
-        description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-      },
-      {
-        id: 3,
-        title: 'Third course',
-        date: new Date(),
-        duration: 110,
-        description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-      },
-    ];
+    this.courses = this.courseService.getCoursesList();
   }
 
   onElementDeleted(elementId: number) {
-    console.log(elementId);
+    this.showDialog();
+    this.elementToDelete = elementId;
   }
 
+  public showDialog() {
+    this.isModalDialogVisible = true;
+  }
 
+  public closeModal(isConfirmed: boolean) {
+    this.isModalDialogVisible = false;
+
+    if (isConfirmed) {
+      this.courseService.removeCourse(this.elementToDelete);
+    }
+
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-finder',
@@ -8,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class FinderComponent implements OnInit {
   public courseToSearch: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
   search(value: string) {
-    if (!value) { return; }
+    if (!value) {
+      return;
+    }
     console.log(value);
   }
 
