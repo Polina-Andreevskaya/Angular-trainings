@@ -20,8 +20,8 @@ export class FinderComponent implements OnInit {
     if (!value) {
       return;
     }
-    console.log(value);
-    this.onSearchCourse.emit(this.courseToSearch);
+    // console.log(value);
+    this.onSearchCourse.emit(value);
   }
 
 }

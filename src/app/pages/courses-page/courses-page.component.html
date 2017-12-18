@@ -1,14 +1,21 @@
 <div class="inner-container">
   <app-header></app-header>
   <main>
-    <h2 *ngIf="!courses">No data. Feel free to add new course</h2>
-    <ul *ngIf="courses" class="m-0 list-unstyled"
-        (onSearchCourse)="searchCourse($event)">
+    <app-finder (onSearchCourse)="searchCourse($event)"></app-finder>
+    <h2 *ngIf="courses.length < 1">
+        No data. Feel free to add new course
+    </h2>
+    <ul *ngIf="courses.length > 0" class="m-0 list-unstyled">
       <app-course *ngFor="let course of courses | orderBy: 'date'"
                   [course]="course"
                   (elementDeleted)="onElementDeleted($event)">
       </app-course>
     </ul>
+    <button *ngIf="showButton"
+            class="btn mt-1 ml-1"
+      (click)="getCourses()">
+      Back to all courses
+    </button>
     <app-modal *ngIf="isModalDialogVisible" [header]="modal.header" [description]="modal.description"
                (isConfirmed)="closeModal($event)"></app-modal>
   </main>

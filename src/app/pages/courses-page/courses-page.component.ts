@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CourseModel} from './course/course.model';
 import {CourseService} from './course.service';
-import {FilterByPipe} from '../../common-components/filter-by.pipe';
+import {FilterByPipe} from '../../Common-components/filter-by.pipe';
 
 
 @Component({
@@ -18,9 +18,10 @@ export class CoursesPageComponent implements OnInit {
     header: 'Delete course',
     description: 'Do you really want to delete this course?'
   };
+  showButton: boolean;
 
   constructor(private courseService: CourseService,
-              private filterByPipe: FilterByPipe
+              private filterBy: FilterByPipe
   ) {
   }
 
@@ -39,13 +40,18 @@ export class CoursesPageComponent implements OnInit {
 
   closeModal(isConfirmed: boolean) {
     this.isModalDialogVisible = false;
-
     if (isConfirmed) {
       this.courseService.removeCourse(this.elementToDelete);
     }
   }
 
   searchCourse(courseToSearch: string) {
-    this.courses = this.filterByPipe.transform<CourseModel>(this.courses, 'title', courseToSearch);
+    this.courses = this.filterBy.transform<CourseModel>(this.courses, 'title', courseToSearch);
+    this.showButton = true;
+  }
+
+  getCourses() {
+    this.courses = this.courseService.getCoursesList();
+    this.showButton = false;
   }
 }
