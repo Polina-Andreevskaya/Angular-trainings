@@ -13,7 +13,7 @@ export class CourseService {
       {
         id: 1,
         title: 'First course',
-        date: new Date(2017, 4, 4),
+        date: new Date(2017, 11, 15),
         duration: 120,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         topRated: true

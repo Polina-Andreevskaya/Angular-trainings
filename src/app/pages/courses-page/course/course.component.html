@@ -1,4 +1,4 @@
-<li class="row m-0 p-3" [ngClass]="{'topRated': course.topRated}">
+<li class="row m-0 p-3" [ngClass]="{'topRated': course.topRated}" appBorderColor [createdDate]="course.date">
   <div class="col-9">
     <h3 class="col-5 d-inline-block">
       {{course.title | uppercase}}

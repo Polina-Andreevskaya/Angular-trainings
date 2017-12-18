@@ -1,3 +1,11 @@
 .topRated {
   background-color: #b9bbbe;
 }
+
+.freshCourse {
+  border: 2px solid #1c7430;
+}
+
+.upcomingCourse {
+  border: 2px solid #007bff;
+}

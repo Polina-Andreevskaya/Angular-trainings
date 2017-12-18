@@ -26,7 +26,8 @@ import {FilterByPipe} from './filter-by.pipe';
     ModalComponent,
     OrderByPipe,
     FilterByPipe,
-    FinderComponent
+    FinderComponent,
+    BorderColorDirective
   ],
   providers: [
     FilterByPipe

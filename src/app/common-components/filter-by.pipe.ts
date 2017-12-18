@@ -6,8 +6,8 @@ import * as _ from 'lodash';
 })
 export class FilterByPipe implements PipeTransform {
 
-  transform<T>(objToFilter: Array<T>, param: string, value: string): Array<T> {
-    return _.filter(objToFilter, function (item) {
+  transform<T>(arrToFilter: Array<T>, param: string, value: string): Array<T> {
+    return _.filter(arrToFilter, function (item) {
       return item[param].toLowerCase().indexOf(value.toLowerCase()) !== -1;
     });
   }

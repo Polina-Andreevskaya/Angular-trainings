@@ -11,10 +11,10 @@ import {FilterByPipe} from '../../Common-components/filter-by.pipe';
 })
 export class CoursesPageComponent implements OnInit {
 
-  protected courses: Array<CourseModel>;
-  protected isModalDialogVisible = false;
+  private courses: Array<CourseModel>;
+  private isModalDialogVisible = false;
   private elementToDelete: number;
-  protected modal = {
+  private modal = {
     header: 'Delete course',
     description: 'Do you really want to delete this course?'
   };
@@ -46,7 +46,9 @@ export class CoursesPageComponent implements OnInit {
   }
 
   searchCourse(courseToSearch: string) {
+    let length = this.courses.length;
     this.courses = this.filterBy.transform<CourseModel>(this.courses, 'title', courseToSearch);
+    if (length === this.courses.length) return;
     this.showButton = true;
   }
 
