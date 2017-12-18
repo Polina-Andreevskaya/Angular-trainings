@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CourseModel} from './course/course.model';
 import {CourseService} from './course.service';
+import {FilterByPipe} from '../../common-components/filter-by.pipe';
 
 
 @Component({
@@ -18,7 +19,9 @@ export class CoursesPageComponent implements OnInit {
     description: 'Do you really want to delete this course?'
   };
 
-  constructor(private courseService: CourseService) {
+  constructor(private courseService: CourseService,
+              private filterByPipe: FilterByPipe
+  ) {
   }
 
   ngOnInit() {
@@ -30,16 +33,19 @@ export class CoursesPageComponent implements OnInit {
     this.elementToDelete = elementId;
   }
 
-  public showDialog() {
+  showDialog() {
     this.isModalDialogVisible = true;
   }
 
-  public closeModal(isConfirmed: boolean) {
+  closeModal(isConfirmed: boolean) {
     this.isModalDialogVisible = false;
 
     if (isConfirmed) {
       this.courseService.removeCourse(this.elementToDelete);
     }
+  }
 
+  searchCourse(courseToSearch: string) {
+    this.courses = this.filterByPipe.transform<CourseModel>(this.courses, 'title', courseToSearch);
   }
 }

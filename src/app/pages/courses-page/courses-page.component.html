@@ -2,8 +2,9 @@
   <app-header></app-header>
   <main>
     <h2 *ngIf="!courses">No data. Feel free to add new course</h2>
-    <ul *ngIf="courses" class="m-0 list-unstyled">
-      <app-course *ngFor="let course of courses"
+    <ul *ngIf="courses" class="m-0 list-unstyled"
+        (onSearchCourse)="searchCourse($event)">
+      <app-course *ngFor="let course of courses | orderBy: 'date'"
                   [course]="course"
                   (elementDeleted)="onElementDeleted($event)">
       </app-course>

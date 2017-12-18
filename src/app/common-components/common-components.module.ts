@@ -9,6 +9,9 @@ import {FinderComponent} from './finder/finder.component';
 import {LoginComponent} from './login/login.component';
 import {formatMinutes} from './formatMinutes.pipe';
 import {ModalComponent} from './modal/modal.component';
+import { BorderColorDirective } from './borderColor/border-color.directive';
+import { OrderByPipe } from './order-by.pipe';
+import { FilterByPipe } from './filter-by.pipe';
 
 
 @NgModule({
@@ -20,10 +23,11 @@ import {ModalComponent} from './modal/modal.component';
     HeaderComponent,
     FooterComponent,
     formatMinutes,
-    ModalComponent
+    ModalComponent,
+    OrderByPipe
   ],
 
-  declarations: [HeaderComponent, LogoComponent, FooterComponent, FinderComponent, LoginComponent, formatMinutes, ModalComponent]
+  declarations: [HeaderComponent, LogoComponent, FooterComponent, FinderComponent, LoginComponent, formatMinutes, ModalComponent, BorderColorDirective, OrderByPipe, FilterByPipe]
 })
 export class CommonComponentsModule {
 }

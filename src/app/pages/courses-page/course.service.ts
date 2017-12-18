@@ -13,7 +13,7 @@ export class CourseService {
       {
         id: 1,
         title: 'First course',
-        date: new Date(),
+        date: new Date(2017, 4, 4),
         duration: 120,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         topRated: true
@@ -21,7 +21,7 @@ export class CourseService {
       {
         id: 2,
         title: 'Second course',
-        date: new Date(),
+        date: new Date(2020, 11, 31),
         duration: 45,
         description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         topRated: false
@@ -29,7 +29,7 @@ export class CourseService {
       {
         id: 3,
         title: 'Third course',
-        date: new Date(),
+        date: new Date(2016, 11, 11),
         duration: 110,
         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
         topRated: true

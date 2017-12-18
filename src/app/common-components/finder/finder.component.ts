@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-finder',
@@ -6,6 +6,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./finder.component.css']
 })
 export class FinderComponent implements OnInit {
+  @Output() onSearchCourse: EventEmitter<string> = new EventEmitter<string>();
+
   public courseToSearch: string;
 
   constructor() {
@@ -19,6 +21,7 @@ export class FinderComponent implements OnInit {
       return;
     }
     console.log(value);
+    this.onSearchCourse.emit(this.courseToSearch);
   }
 
 }
