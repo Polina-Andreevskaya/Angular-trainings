@@ -1,7 +1,10 @@
-<li class="row m-0 p-3">
+<li class="row m-0 p-3" [ngClass]="{'topRated': course.topRated}">
   <div class="col-9">
     <h3 class="col-5 d-inline-block">
-      {{course.title}}
+      {{course.title | uppercase}}
+      <span *ngIf="course.topRated" class="float-right" title="top rated course">
+      &#9734;
+    </span>
     </h3>
     <span class="col-2">
       {{course.duration | toHoursMinutes}}

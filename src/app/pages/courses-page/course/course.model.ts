@@ -5,6 +5,7 @@ export class CourseModel implements CourseInterface {
               public title: string,
               public duration: number,
               public description: string,
-              public date: Date
+              public date: Date,
+              public topRated: boolean
   ) {}
 }
