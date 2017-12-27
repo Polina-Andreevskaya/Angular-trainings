@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CourseModel} from './course/course.model';
 import {CourseService} from './course.service';
+import {FilterByPipe} from '../../Common-components/filter-by.pipe';
 
 
 @Component({
@@ -10,15 +11,18 @@ import {CourseService} from './course.service';
 })
 export class CoursesPageComponent implements OnInit {
 
-  protected courses: Array<CourseModel>;
-  protected isModalDialogVisible = false;
+  private courses: Array<CourseModel>;
+  private isModalDialogVisible = false;
   private elementToDelete: number;
-  protected modal = {
+  private modal = {
     header: 'Delete course',
     description: 'Do you really want to delete this course?'
   };
+  showButton: boolean;
 
-  constructor(private courseService: CourseService) {
+  constructor(private courseService: CourseService,
+              private filterBy: FilterByPipe
+  ) {
   }
 
   ngOnInit() {
@@ -30,16 +34,26 @@ export class CoursesPageComponent implements OnInit {
     this.elementToDelete = elementId;
   }
 
-  public showDialog() {
+  showDialog() {
     this.isModalDialogVisible = true;
   }
 
-  public closeModal(isConfirmed: boolean) {
+  closeModal(isConfirmed: boolean) {
     this.isModalDialogVisible = false;
-
     if (isConfirmed) {
       this.courseService.removeCourse(this.elementToDelete);
     }
+  }
 
+  searchCourse(courseToSearch: string) {
+    let length = this.courses.length;
+    this.courses = this.filterBy.transform<CourseModel>(this.courses, 'title', courseToSearch);
+    if (length === this.courses.length) return;
+    this.showButton = true;
+  }
+
+  getCourses() {
+    this.courses = this.courseService.getCoursesList();
+    this.showButton = false;
   }
 }
