@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {CourseModel} from './course/course.model';
 import {CourseService} from './course.service';
 import {FilterByPipe} from '../../Common-components/filter-by.pipe';
@@ -7,12 +7,13 @@ import {FilterByPipe} from '../../Common-components/filter-by.pipe';
 @Component({
   selector: 'app-courses-page',
   templateUrl: './courses-page.component.html',
-  styleUrls: ['./courses-page.component.css']
+  styleUrls: ['./courses-page.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CoursesPageComponent implements OnInit {
+export class CoursesPageComponent {
 
-  private courses: Array<CourseModel>;
-  private isModalDialogVisible = false;
+  public courses: Array<CourseModel>;
+  public isModalDialogVisible = false;
   private elementToDelete: number;
   private modal = {
     header: 'Delete course',

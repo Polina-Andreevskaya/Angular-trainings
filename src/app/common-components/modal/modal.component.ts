@@ -11,11 +11,11 @@ export class ModalComponent {
   @Input() description: string;
   @Output() isConfirmed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  private confirm() {
+  public confirm() {
     this.isConfirmed.emit(true);
   }
 
-  private close() {
+  public close() {
     this.isConfirmed.emit(false);
   }
 

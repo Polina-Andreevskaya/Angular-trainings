@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "ngStart": "ng serve",
+    "ngStartAot": "ng serve --aot",
     "ngBuildDev": "ng build",
     "ngBuildProd": "ng build --prod",
     "buildDev": "rimraf dist && webpack --progress",
